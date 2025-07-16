@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ExternalLink } from 'lucide-react'
-import ReactPlayer from 'react-player'
 
 export default function JobClipsPage() {
   const [jobClips, setJobClips] = useState([])
@@ -85,24 +84,14 @@ export default function JobClipsPage() {
                       {clip.id}
                     </td>
                     <td className="p-4">
-                      <div className="flex items-center gap-3">
-                        {/* <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => window.open(clip.minio_url, '_blank')}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-1" />
-                          View
-                        </Button> */}
-                        <div className="w-48 h-24 bg-black rounded overflow-hidden">
-                          <ReactPlayer
-                          src={clip.minio_url.replace('localhost', '10.7.30.105')}
-                          width="100%"
-                          height="100%"
-                          controls
-                          />
-                        </div>
-                      </div>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => window.open(clip.minio_url, '_blank')}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-1" />
+                        View Video
+                      </Button>
                     </td>
                     <td className="p-4">
                       {getResultBadge(clip.result)}
