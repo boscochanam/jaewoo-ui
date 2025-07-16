@@ -96,10 +96,10 @@ export default function JobClipsPage() {
                         </Button> */}
                         <div className="w-48 h-24 bg-black rounded overflow-hidden">
                           <ReactPlayer
-                            src={clip.minio_url}
-                            width="100%"
-                            height="100%"
-                            controls
+                          src={clip.minio_url.replace('localhost', '10.7.30.105')}
+                          width="100%"
+                          height="100%"
+                          controls
                           />
                         </div>
                       </div>
